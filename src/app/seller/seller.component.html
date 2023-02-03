@@ -1,0 +1,29 @@
+<h1>Successfully Landed on Seller Page</h1>
+<div class="Sign-Up-container">
+    <div class="form-style" *ngIf="!showLogin">
+        <h1>Seller-SignUp</h1>
+        <form #sellerSignUp="ngForm"  class="common-form">
+            <label for="name">Name :</label>
+            <input class="form-input" type="text" placeholder="Enter Name" [(ngModel)]="seller.name" name="name">
+            <label for="name">Email :</label>
+            <input class="form-input" type="email" placeholder="Enter Email" [(ngModel)]="seller.email" name="email">
+            <label for="name">Password :</label>
+            <input class="form-input" type="password" placeholder="Enter Password" [(ngModel)]="seller.password" name="password">
+            <button class="form-button" (click)="signup()">SignUp</button>
+            <a class="auth-toggle" (click)="openLogin()">Already Have Account? Click to Login</a>
+        </form>
+    </div>
+
+    <!-- login area -->
+    <div class="form-style" *ngIf="showLogin">
+        <h1>Seller-Login</h1>
+        <form #sellerLogin="ngForm"  class="common-form">
+            <label for="name">Email :</label>
+            <input class="form-input" type="email" placeholder="Enter Email" [(ngModel)]="seller.email" name="email">
+            <label for="name">Password :</label>
+            <input class="form-input" type="password" placeholder="Enter Password" [(ngModel)]="seller.password" name="password">
+            <button class="form-button" (click)="login()">Login</button>
+            <a class="auth-toggle" (click)="openSignUp()">Don't Have Account? Click to SignUp</a>
+        </form>
+    </div>
+</div>
